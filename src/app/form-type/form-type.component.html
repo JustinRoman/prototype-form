@@ -1,0 +1,23 @@
+<div
+  [formGroup]="fieldProjectType"
+  class="container mb-5"
+>
+  <div
+    class="form-check form-check-inline"
+    *ngFor="let formType of formTypes"
+  >
+    <label
+      class="form-check-label"
+      for="{{formType}}"
+    >
+      <input
+        type="radio"
+        id="{{formType}}"
+        class="form-check-input"
+        formControlName="formType"
+        [value]="formType"
+      >
+      {{formType}}
+    </label>
+  </div>
+</div>

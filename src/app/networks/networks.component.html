@@ -1,0 +1,23 @@
+<div
+  [formGroup]="fieldProjectNetwork"
+  class="container mb-5"
+>
+  <div
+    class="form-check form-check-inline"
+    *ngFor="let network of networks"
+  >
+    <label
+      class="form-check-label"
+      for="{{network}}"
+    >
+      <input
+        type="radio"
+        id="{{network}}"
+        class="form-check-input"
+        formControlName="network"
+        [value]="network"
+      >
+      {{network}}
+    </label>
+  </div>
+</div>

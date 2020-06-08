@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form
+        [formGroup]="prototypeForm"
+        (ngSubmit)="onSubmit()"
+      >
+        <h3>Tell us what you want *</h3>
+
+        <app-form-type [fieldProjectType]="prototypeForm"></app-form-type>
+
+<!--        <div *ngIf="!isEmpty()">-->
+        <app-networks [fieldProjectNetwork]="prototypeForm"></app-networks>
+
+        <app-project-length [fieldProjectLength]="prototypeForm"></app-project-length>
+
+        <app-inspirations [fieldProjectInspiration]="prototypeForm"></app-inspirations>
+<!--        </div>-->
+
+        <br>
+
+        <button
+          class="btn btn-dark"
+          type="submit"
+          [disabled]="prototypeForm.invalid"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+  <br>
+  <code>
+    {{prototypeForm.value | json}}
+  </code>
+</div>

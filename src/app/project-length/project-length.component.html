@@ -1,0 +1,45 @@
+<div
+  [formGroup]="fieldProjectLength"
+  class="container mb-4"
+>
+  <div
+    formArrayName="projectLengths"
+    class="row"
+    *ngFor="let projectLength of fieldProjectLength.get('projectLengths').controls; let i = index"
+  >
+    <label for="rangeSlider">
+      Length
+    </label>
+    <input
+      type="range"
+      id="rangeSlider"
+      class="custom-range"
+      min="6"
+      max="30"
+      [formControlName]="i"
+    >
+
+    <div class="col-xs-2">
+      <button
+        class="btn btn-danger"
+        type="button"
+        [disabled]="i < 1"
+        (click)="removeProjectLength(i)"
+      >
+        Delete
+      </button>
+    </div>
+
+    <br>
+  </div>
+
+  <hr>
+
+  <button
+    type="button"
+    class="btn btn-info"
+    (click)="addProjectLength()"
+  >
+    Add Other Duration
+  </button>
+</div>

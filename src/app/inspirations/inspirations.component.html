@@ -1,0 +1,23 @@
+<div
+  [formGroup]="fieldProjectInspiration"
+  class="container mb-5"
+>
+  <div class="row mb-4">
+    <div
+      class="col form-check form-check-inline"
+      *ngFor="let inspiration of inspirations; let i = index"
+    >
+      <input
+        id="{{inspiration}}"
+        type="checkbox"
+        value="{{inspiration}}"
+        formControlName="inspirations"
+        (click)="addInspiration(inspiration)"
+      >
+
+      <label for="{{inspiration}}">
+        {{inspiration}}
+      </label>
+    </div>
+  </div>
+</div>
